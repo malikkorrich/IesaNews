@@ -13,6 +13,7 @@ Contact Page
 
 Team Page
 ![6](https://user-images.githubusercontent.com/61884452/235311256-c2ae7cc8-c59b-4e92-abe9-12c7811e0a14.png)
+![6](https://user-images.githubusercontent.com/61884452/235311816-073da8a9-6463-4745-a026-e5696152cee9.png)
 
 Signup Page
 
