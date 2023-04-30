@@ -1,0 +1,134 @@
+﻿ @model List<Category>
+
+
+<div class="banner">
+    <div class="about">
+        <p class="p1">Líderes en Aplicaciones informáticas para Administradores de Fincas</p>
+        <p class="p2">35 años creando soluciones para ayudar a la administración en el día a día.</p>
+        <p class="p3">Conoce nuestros productos:</p>
+    </div>
+
+    <div class="cards">
+        @if (Model.Count == 0) { }
+        else
+        {
+            @foreach (Category category in Model.Take(4))
+            {
+
+                
+                <div class="card">
+                    @if (category.title.Contains("gesfincas"))
+                    {
+                        <img class="gesfincas" src="~/images/@category.image" alt="notfound">
+                    }
+                    else
+                    {
+                        <img src="~/images/@category.image" alt="notfound">
+                    }
+                    <p>@category.description</p>
+                    <a href="/news/index/@category.Id">Saber Mas</a>
+                </div>
+            }
+        }
+    </div>
+
+<div class="cursos">
+    <div class="about">
+        <p class="t1">IESA TE INVITA A SUS CURSOS DE FORMACIÓN</p>
+        <p class="t2">Formación de calidad para tu despacho</p>
+        <p class="t3">Aprende a manejar el software de IESA</p>
+    </div>
+
+    <div class="url">
+        <div class="box">
+            <div class="icon">
+                <i class="fa-solid fa-pen"></i>
+
+            </div>
+            <div class="links">
+                <a id="a" href="">GESFINCAS.NET</a>
+                <a id="b" href="">Curso de Formación</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="icon">
+                <i class="fa-solid fa-desktop"></i>
+            </div>
+            <div class="links">
+                <a id="a" href="">CERTIFICADOS DIGITALES Y BUZONES</a>
+                <a id="b" href="">Jornadas gratuitas</a>
+            </div>
+        </div>
+
+
+        <div class="box">
+            <div class="icon">
+                <i class="fa-solid fa-desktop"></i>
+            </div>
+            <div class="links">
+                <a id="a" href="">COORDINACIÓN DE RIESGOS LABORALES</a>
+                <a id="b" href="">Cursos gratuitos</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="video-wrapper">
+    <div class="video">
+        <iframe src="https://player.vimeo.com/video/518056215?dnt=1&amp;app_id=122963" width="660" height="371" allow="autoplay; fullscreen; picture-in-picture">
+        </iframe>
+    </div>
+
+    <div class="info">
+        <p class="p1">Un despacho 100% eficiente es posible.</p>
+        <p class="p2">Aplicaciones y software para Administradores de Fincas 3.0</p>
+        <p class="p3">Desde IESA te ayudamos con la tecnología más avanzada a digitalizar tu despacho, ahorrar tiempo y conseguir la máxima rentabilidad</p>
+        <a href="">Mas Informacion</a>
+    </div>
+</div>
+
+
+<div class="productos">
+
+    <div class="producto">
+        <img src="~/images/agregador.png" alt="">
+        <p class="title">RGPD 365</p>
+        <p>El único servicio pensado para Administradores de Fincas, para un perfecto y permanente cumplimiento del nuevo RGPD.</p>
+        <a href="">Mas Informacion</a>
+    </div>
+    <div class="producto">
+        <img src="~/images/regimen.png" alt="">
+        <p class="title">AGREGADOR FINANCIERO</p>
+        <p>
+            Solución integral para la contabilización de movimientos bancarios y la gestión de la morosidad. Te facilitamos los trámites de tu día a día.
+        </p>
+        <a href="">Mas Informacion</a>
+    </div>
+    <div class="producto">
+        <img src="~/images/soporte.png" alt="">
+        <p class="title">SERVICIO DE ATENCIÓN AL VECINO</p>
+        <p>Promueve la satisfacción de tus clientes proporcionándoles asistencia 24 horas al  día los 365 días. Trabajamos como una extensión de tu despacho.</p>
+        <a href="">Mas Informacion</a>
+    </div>
+
+</div>
+
+
+<div class="subscribe">
+    <div class="wrapper">
+        <p class="title">Suscríbete a nuestra Newsletter</p>
+
+        <form action="">
+            <input type="email" name="" id="" placeholder="Correo Electronico" required>
+            <div class="check">
+                <!-- <input type="checkbox"  style="width:auto" name="" id="">-->
+                <a href="">He leído y acepto la política de privacidad para recibir la Newsletter</a>
+            </div>
+            <button type="submit" id="info">SUSCRIBIRME</button>
+        </form>
+
+    </div>
+</div>
+

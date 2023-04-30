@@ -1,0 +1,177 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Área de usuario - IESA Informatización de Empresas, S.L.</title>
+    <link rel="stylesheet" href="~/css/dashbaord.css">
+    <link rel="stylesheet" href="~/css/grid.css">
+    <link rel="icon" type="image/x-icon" href="~/images/favicon.ico">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+
+
+    <div class="header">
+        <div class="wrapper">
+            <div class="logo">
+                <img src="~/images/logo.png" alt="">
+            </div>
+
+            <div class="links">
+                <p>Hola @User.Identity.Name . </p> <a href="/auth/logout">Logout   </a>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="wrapper">
+                <ul>
+                    <li class="fnav"><a href="/">Inicio</a></li>|
+
+                    <li class="fnav"><a asp-controller="auth" asp-action="dashboard">Área de usuarios </a></li>|
+                    <li class="fnav"><a asp-controller="news" asp-action="create">Anadir Noticias </a></li>|
+                    <li class="fnav"><a asp-controller="news" asp-action="edit">Editar Noticias </a></li>|
+                    <li class="fnav"><a asp-controller="category" asp-action="Add">Anadir Categoria </a></li>|
+                    <li class="fnav"><a asp-controller="category" asp-action="list">Editar Categoria </a></li>|
+                    <li class="fnav"><a asp-controller="contact" asp-action="list">Contactos</a></li>|
+                    <li class="fnav"><a asp-controller="user" asp-action="list">Usuarios</a></li>|
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="content">
+            <div class="wrapper">
+                <div class="title">
+
+                </div>
+
+
+                <div class="details">
+                    <div class="info">
+
+
+                        <div class="pub">
+
+
+                            <!-- Dashboard icons -->
+                            <div class="grid_7">
+                                <a asp-controller="news" asp-action="create" class="dashboard-module">
+                                    <img src="~/images/admin/Crystal_Clear_write.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/Crystal_Clear_write.gif" width="64" height="64" alt="edit" />
+                                    <span>Nuevo articulo</span>
+                                </a>
+
+                                <a href="" class="dashboard-module">
+                                    <img src="~/images/admin/Crystal_Clear_file.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/Crystal_Clear_file.gif" width="64" height="64" alt="edit" />
+                                    <span>Subir fichiero</span>
+                                </a>
+
+                                <a asp-controller="news" asp-action="list" class="dashboard-module">
+                                    <img src="~/images/admin/Crystal_Clear_files.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/Crystal_Clear_files.gif" width="64" height="64" alt="edit" />
+                                    <span>Articulos</span>
+                                </a>
+
+                                <a href="" class="dashboard-module">
+                                    <img src="~/images/admin/Crystal_Clear_calendar.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/Crystal_Clear_calendar.gif" width="64" height="64" alt="edit" />
+                                    <span>Calendar</span>
+                                </a>
+
+                                <a asp-controller="user" asp-action="list" class="dashboard-module">
+                                    <img src="~/images/admin/Crystal_Clear_user.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/Crystal_Clear_user.gif" width="64" height="64" alt="edit" />
+                                    <span>Usuarios</span>
+                                </a>
+
+                                <a asp-controller="static" asp-action="index" class="dashboard-module">
+                                    <img src="~/images/admin/Crystal_Clear_stats.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/Crystal_Clear_stats.gif" width="64" height="64" alt="edit" />
+                                    <span>Estadísticas</span>
+                                </a>
+
+                                <a asp-controller="setting" asp-action="index" class="dashboard-module">
+                                    <img src="~/images/admin/Crystal_Clear_settings.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/Crystal_Clear_settings.gif" width="64" height="64" alt="edit" />
+                                    <span>Ajustes</span>
+                                </a>
+                                <div style="clear: both"></div>
+                            </div> <!-- End .grid_7 -->
+
+
+                            <div class="grid_5">
+                                <div class="module">
+                                    <h2><span>Account overview</span></h2>
+
+                                    <div class="module-body">
+                                        @{
+                                            string url = "http://checkip.dyndns.org";
+                                            System.Net.WebRequest req = System.Net.WebRequest.Create(url);
+                                            System.Net.WebResponse resp = req.GetResponse();
+                                            System.IO.StreamReader sr = new System.IO.StreamReader(resp.GetResponseStream());
+                                            string response = sr.ReadToEnd().Trim();
+                                            string[] a = response.Split(':');
+                                            string a2 = a[1].Substring(1);
+                                            string[] a3 = a2.Split('<');
+                                            string a4 = a3[0];
+                                            string ip = a4;
+
+                                         }
+
+                                        <p>
+                                            <strong>User: </strong>@User.Identity.Name<br />
+                                            <strong>Your last visit was on: </strong>20 January 2010,<br />
+                                            <strong>From IP: </strong>@ip
+                                        </p>
+
+
+                                    </div>
+                                </div>
+                                <div style="clear:both;"></div>
+                            </div> <!-- End .grid_5 -->
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="footer">
+            <div class="content">
+                <ul>
+                    <li><small>Atención Comercial:</small></li>
+                    <li><small>	911 407 201</small></li>
+                    <li><small>	comercial@iesa.es</small></li>
+                    <li><small>	(c) 1999 - 2015 Informatización de Empresas, S.L.</small></li>
+                </ul>
+                <ul>
+                    <li><small>	Soporte técnico:</small></li>
+                    <li><small>911 407 202</small></li>
+                    <li><small class="mail">	soporte@iesa.es</small></li>
+                    <li><small><a href="">Mapa del sitio</a>| <a href="">Aviso legal</a> | <a href="">Protección de datos </a>| <a href="">Poítica de cookies</a></small></li>
+                </ul>
+                <ul>
+                    <li>
+                        <small>Soporte Empresas:</small>
+                    </li>
+                    <li><small>	911 407 207</small></li>
+                    <li><small>proveedores@tucomunidad.com</small></li>
+                    <li>
+                        <small>
+                            Informatización de Empresas, dispone de un sistema de calidad
+                            certificado de acuerdo a la norma 9001 por EQA
+                        </small>
+                    </li>
+
+                </ul>
+
+
+            </div>
+        </div>
+
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Área de usuario - IESA Informatización de Empresas, S.L.</title>
+    <link rel="stylesheet" href="~/css/dashbaord.css">
+    <link rel="stylesheet" href="~/css/grid.css">
+    <link rel="icon" type="image/x-icon" href="~/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+
+
+    <div class="header">
+        <div class="wrapper">
+            <div class="logo">
+                <img src="~/images/logo.png" alt="">
+            </div>
+
+            <div class="links">
+                <p>Hola @User.Identity.Name . </p> <a href="/auth/logout">Logout   </a>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="wrapper">
+                <ul>
+                    <li class="fnav"><a href="/">Inicio</a></li>|
+
+                    <li class="fnav"><a asp-controller="auth" asp-action="dashboard">Área de usuarios </a></li>|
+                    <li class="fnav"><a asp-controller="news" asp-action="create">Anadir Noticias </a></li>|
+                    <li class="fnav"><a asp-controller="news" asp-action="edit">Editar Noticias </a></li>|
+                    <li class="fnav"><a asp-controller="category" asp-action="Add">Anadir Categoria </a></li>|
+                    <li class="fnav"><a asp-controller="category" asp-action="list">Editar Categoria </a></li>|
+                    <li class="fnav"><a asp-controller="contact" asp-action="list">Contactos</a></li>|
+                    <li class="fnav"><a asp-controller="user" asp-action="list">Usuarios</a></li>|
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="content">
+            <div class="wrapper">
+                <div class="title">
+
+                </div>
+
+
+                <div class="details">
+                    <div class="info">
+
+
+                        <div class="pub">
+
+                            <div class="state">
+                                <div class="stat-card">
+                                    <div class="stat-card__content">
+                                        <p class="text-uppercase mb-1 text-muted">Total Articulos</p>
+                                        <h2>@ViewData["articles"].ToString()</h2>
+                                        <div>
+                                            <span class="text-success font-weight-bold mr-1"><i class="fa-sharp fa-solid fa-arrow-up"></i> +5%</span>
+                                            <span class="text-muted">vs últimos 28 días</span>
+                                        </div>
+                                    </div>
+                                    <div class="stat-card__icon stat-card__icon--success">
+                                        <div class="stat-card__icon-circle">
+                                            <i class="fa-solid fa-file"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="stat-card">
+                                    <div class="stat-card__content">
+                                        <p class="text-uppercase mb-1 text-muted">Total Usuarios</p>
+                                        <h2>@ViewData["users"].ToString()</h2>
+                                        <div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-card__icon stat-card__icon--primary">
+                                        <div class="stat-card__icon-circle">
+                                            <i class="fa fa-users"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="stat-card">
+                                    <div class="stat-card__content">
+                                        <p class="text-uppercase mb-1 text-muted">Total Contactos</p>
+                                        <h2>@ViewData["contacts"].ToString()</h2>
+                                        <div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-card__icon stat-card__icon--primary">
+                                        <div class="stat-card__icon-circle">
+                                            <i class="fa-solid fa-address-book"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="footer">
+            <div class="content">
+                <ul>
+                    <li><small>Atención Comercial:</small></li>
+                    <li><small>	911 407 201</small></li>
+                    <li><small>	comercial@iesa.es</small></li>
+                    <li><small>	(c) 1999 - 2015 Informatización de Empresas, S.L.</small></li>
+                </ul>
+                <ul>
+                    <li><small>	Soporte técnico:</small></li>
+                    <li><small>911 407 202</small></li>
+                    <li><small class="mail">	soporte@iesa.es</small></li>
+                    <li><small><a href="">Mapa del sitio</a>| <a href="">Aviso legal</a> | <a href="">Protección de datos </a>| <a href="">Poítica de cookies</a></small></li>
+                </ul>
+                <ul>
+                    <li>
+                        <small>Soporte Empresas:</small>
+                    </li>
+                    <li><small>	911 407 207</small></li>
+                    <li><small>proveedores@tucomunidad.com</small></li>
+                    <li>
+                        <small>
+                            Informatización de Empresas, dispone de un sistema de calidad
+                            certificado de acuerdo a la norma 9001 por EQA
+                        </small>
+                    </li>
+
+                </ul>
+
+
+            </div>
+        </div>
+
+
+</body>
+</html>

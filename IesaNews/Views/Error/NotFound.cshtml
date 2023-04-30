@@ -1,0 +1,133 @@
+﻿<style>
+    /*path*/
+    .path {
+        width: 100%;
+        display: flex;
+        background-color: #d8d7d7;
+        height: 60px;
+    }
+
+        .path .wrapper {
+            width: 85%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .path .wrapper p {
+                margin: 0 20px;
+            }
+
+            .path .wrapper a {
+                margin: 0 20px;
+                color: rgb(204, 102, 102);
+                font-weight: 400;
+                font-size: 1em;
+                text-decoration: none;
+            }
+
+
+
+
+
+    .error {
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+        .content p, small {
+            margin: 20px 0;
+        }
+
+        .content .statuscode {
+            color: #009438;
+            font-size: 220px;
+            font-weight: 700;
+        }
+
+        .content .msg {
+            font-size: 1.4em;
+            color: #555354;
+        }
+
+
+    .search i {
+        font-size: 1.5em;
+    }
+
+
+    .content a {
+        border: 1px solid #555354;
+        padding: 10px;
+        border-radius: 6px;
+        background-color: #555354;
+        text-decoration: none;
+        color: #fff;
+        font-size: 0.7em;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+
+
+
+
+    /*search input*/
+    .search-container {
+        position: relative;
+        display: inline-block;
+    }
+
+        .search-container input[type="text"] {
+            padding-right: 40px;
+            width: 500px;
+        }
+
+            .search-container input[type="text"]::before {
+                content: "\f002"; /* Unicode for the search Font Awesome icon */
+                font-family: "Font Awesome 5 Free";
+                position: absolute;
+                top: 50%;
+                right: 50px;
+                transform: translateY(-50%);
+            }
+  
+</style>
+<div class="path">
+    <div class="wrapper">
+        <a clas="home" href="/">IESA</a> >
+        <p>¿BUSCABAS ALGO?</p>
+    </div>
+</div>
+
+
+<div class="error">
+    <div class="content">
+        <p class="statuscode">404</p>
+        <p class="msg">Error, Página no encontrada. Intentelo nuevamente ingresando en www.iesa.es</p>
+
+        <p>You can search what interested:</p>
+
+        <div class="search">
+            <div class="search-container">
+                <div class="search-container">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+
+            </div>
+
+        </div>
+        <small>Or</small>
+        <div class="go">
+            <a href="/">GO HOME</a>
+        </div>
+    </div>
+</div>

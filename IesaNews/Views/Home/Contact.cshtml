@@ -1,0 +1,73 @@
+﻿
+<style>
+    /*path*/
+    .path {
+        width: 100%;
+        display: flex;
+        background-color: #d8d7d7;
+        height: 60px;
+    }
+
+        .path .wrapper {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .path .wrapper p {
+                margin: 0 20px;
+            }
+
+            .path .wrapper a {
+                margin: 0 20px;
+                color: rgb(204, 102, 102);
+                font-weight: 400;
+                font-size: 1em;
+                text-decoration: none;
+            }
+
+
+
+</style>
+<div class="path">
+    <div class="wrapper">
+        <a clas="home" href="/">IESA</a> >
+        <p>ContactNos</p>
+    </div>
+</div>
+<div class="contact">
+    <form action="contact" method="post">
+        <div class="form-row">
+            <div class="form-column">
+                <label for="first-name">Nombre:</label>
+                <input type="text" id="first-name" name="firstname" minlength="5" maxlength="10" required>
+            </div>
+            <div class="form-column">
+                <label for="last-name">Apellidos:</label>
+                <input type="text" id="last-name" name="lastname" minlength="5" maxlength="10" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-column">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-column">
+                <label for="Subject">Asunto:</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-column">
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</div>

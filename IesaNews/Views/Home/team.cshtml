@@ -1,0 +1,93 @@
+﻿<style>
+    /*path*/
+    .path {
+        width: 100%;
+        display: flex;
+        background-color: #d8d7d7;
+        height: 60px;
+    }
+
+        .path .wrapper {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .path .wrapper p {
+                margin: 0 20px;
+            }
+
+            .path .wrapper a {
+                margin: 0 20px;
+                color: rgb(204, 102, 102);
+                font-weight: 400;
+                font-size: 1em;
+                text-decoration: none;
+            }
+
+    .team {
+        width: 100%;
+        display: flex;
+        padding: 30px;
+        justify-content: space-around;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        height: 300px;
+        width: 220px;
+        background-color: #F7F8F9;
+        border-radius: 8px 8px 8px 8px;
+    }
+
+        .card .teamavatar {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .card p {
+            padding: 15px 0;
+            font-family: Robot;
+            font-weight: 400;
+            color: #012129;
+        }
+
+    .socialteam i {
+        font-size: 1.4em;
+        margin: 0 6px;
+        color: #096982;
+    }
+
+    
+</style>
+<div class="path">
+    <div class="wrapper">
+        <a clas="home" href="/">IESA</a> >
+        <p>Equipo</p>
+    </div>
+</div>
+
+
+<div class="team">
+     
+
+
+        <div class="card">
+            <img class="teamavatar" src="~/images/avatar1.png" alt="">
+            <p>Fullstack web developer</p>
+
+            <div class="socialteam">
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-google"></i>
+                <i class="fa-brands fa-facebook"></i>
+            </div>
+        </div>
+     
+</div>

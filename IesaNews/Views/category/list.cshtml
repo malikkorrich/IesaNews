@@ -1,0 +1,199 @@
+﻿@model List<Category>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Área de usuario - IESA Informatización de Empresas, S.L.</title>
+    <link rel="stylesheet" href="~/css/dashbaord.css">
+    <link rel="stylesheet" href="~/css/notification.css">
+    <link rel="icon" type="image/x-icon" href="~/images/favicon.ico">
+</head>
+<body>
+
+
+    <div class="header">
+        <div class="wrapper">
+            <div class="logo">
+                <img src="~/images/logo.png" alt="">
+            </div>
+
+            <div class="links">
+                <p>Hola @User.Identity.Name . </p> <a href="/auth/logout">Logout   </a>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="wrapper">
+                <ul>
+                    <li class="fnav"><a href="/">Inicio</a></li>|
+
+                    <li class="fnav"><a asp-controller="auth" asp-action="dashboard">Área de usuarios </a></li>|
+                    <li class="fnav"><a asp-controller="news" asp-action="create">Anadir Noticias </a></li>|
+                    <li class="fnav"><a asp-controller="news" asp-action="edit">Editar Noticias </a></li>|
+                    <li class="fnav"><a asp-controller="category" asp-action="Add">Anadir Categoria </a></li>|
+                    <li class="fnav"><a asp-controller="category" asp-action="list">Editar Categoria </a></li>|
+                    <li class="fnav"><a asp-controller="contact" asp-action="list">Contactos</a></li>|
+                    <li class="fnav"><a asp-controller="user" asp-action="list">Usuarios</a></li>|
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="content">
+            <div class="wrapper">
+                <div class="title">
+
+                </div>
+
+
+                <div class="details">
+                    <div class="info">
+
+
+                        <div class="pub">
+
+
+                            <!-- Example table -->
+                            <div class="module">
+                                <h2><span>Categorias</span></h2>
+
+                                <div class="module-table-body">
+                                    <form action="">
+                                        <table id="myTable" class="tablesorter">
+                                            <thead>
+                                                <tr>
+
+                                                    <th style="width:10%">Titulo</th>
+                                                    <th style="width:30%">Descripcion</th>
+                                                    <th style="width:15%">Image</th>
+                                                    <th style="width:10%"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (Model.Count == 0)
+                                                {
+
+                                                    <div class="grid_12">
+
+                                                        <span class="notification n-information"><p>Todavia no ha publicado nigngun articulo .</p></span>
+                                                    </div>
+
+                                                }
+                                                else
+                                                {
+                                                    @foreach (Category category in Model)
+                                                    {
+                                            <tr>
+
+                                                <td>@category.title</td>
+                                                <td>@category.description</td>
+                                                @if (category.image == null)
+                                                {
+                                                    <td><img src="~/images/default.png" style="width:150px; height:120px;" alt="not found"></td>
+}
+                                                else
+                                                {
+                                                    <td><img src="~/images/@category.image" style="width:150px; height:120px;" alt="not found"></td>
+                                                }
+                                                <td>
+                                                    <input type="checkbox" />
+
+                                                    <a href="/category/edit/@category.Id"><img src="~/images/admin/pencil.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/pencil.gif" width="16" height="16" alt="edit" /></a>
+                                                    <a href="/user/create"><img src="~/images/admin/balloon.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/balloon.gif" width="16" height="16" alt="comments" /></a>
+                                                    <a href="/category/delete/@category.Id"><img src="~/images/admin/bin.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/bin.gif" width="16" height="16" alt="delete" /></a>
+                                                </td>
+
+                                            </tr>
+                                                    }
+                                                }
+
+
+                                            </tbody>
+                                        </table>
+                                    </form>
+                                    <div class="pager" id="pager">
+                                        <form action="">
+                                            <div>
+                                                <img class="first" src="~/images/admin/arrow-stop-180.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/arrow-stop-180.gif" alt="first" />
+                                                <img class="prev" src="~/images/admin/arrow-180.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/arrow-180.gif" alt="prev" />
+                                                <input type="text" class="pagedisplay input-short align-center" />
+                                                <img class="next" src="~/images/admin/arrow.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/arrow.gif" alt="next" />
+                                                <img class="last" src="~/images/admin/arrow-stop.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/arrow-stop.gif" alt="last" />
+                                                <select class="pagesize input-short align-center">
+                                                    <option value="10" selected="selected">10</option>
+                                                    <option value="20">20</option>
+                                                    <option value="30">30</option>
+                                                    <option value="40">40</option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="table-apply">
+                                        <form action="">
+                                            <div>
+                                                <span>Apply action to selected:</span>
+                                                <select class="input-medium">
+                                                    <option value="1" selected="selected">Select action</option>
+                                                    <option value="2">Publish</option>
+                                                    <option value="3">Unpublish</option>
+                                                    <option value="4">Delete</option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                </div> <!-- End .module-table-body -->
+                            </div> <!-- End .module -->
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="footer">
+            <div class="content">
+                <ul>
+                    <li><small>Atención Comercial:</small></li>
+                    <li><small>	911 407 201</small></li>
+                    <li><small>	comercial@iesa.es</small></li>
+                    <li><small>	(c) 1999 - 2015 Informatización de Empresas, S.L.</small></li>
+                </ul>
+                <ul>
+                    <li><small>	Soporte técnico:</small></li>
+                    <li><small>911 407 202</small></li>
+                    <li><small class="mail">	soporte@iesa.es</small></li>
+                    <li><small><a href="">Mapa del sitio</a>| <a href="">Aviso legal</a> | <a href="">Protección de datos </a>| <a href="">Poítica de cookies</a></small></li>
+                </ul>
+                <ul>
+                    <li>
+                        <small>Soporte Empresas:</small>
+                    </li>
+                    <li><small>	911 407 207</small></li>
+                    <li><small>proveedores@tucomunidad.com</small></li>
+                    <li>
+                        <small>
+                            Informatización de Empresas, dispone de un sistema de calidad
+                            certificado de acuerdo a la norma 9001 por EQA
+                        </small>
+                    </li>
+
+                </ul>
+
+
+            </div>
+        </div>
+
+
+</body>
+</html>

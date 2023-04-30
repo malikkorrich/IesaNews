@@ -1,0 +1,38 @@
+/* --------------------  Boxed notifications -------------------- */
+
+.notification {
+    display: block;
+    padding: 20px 20px 20px 45px;
+    border: 1px solid;
+    margin-bottom: 20px;
+    background-repeat: no-repeat;
+    background-position: 20px 20px;
+}
+
+.n-success {
+    background-color: #a3e6bd;
+    border-color: #68d59b;
+    background-image: url(../images/admin/notification-tick.gif);
+}
+
+.n-information {
+    background-color: #9fddea;
+    border-color: #5fceea;
+    background-image: url(../images/admin/notification-information.gif);
+}
+
+.grid_12 {
+    padding: 20px 10px;
+    width:35%;
+}
+    .n-attention {
+    background-color: #f9e497;
+    border-color: #ffcb4f;
+    background-image: url(../images/admin/notification-exclamation.gif);
+}
+
+.n-error {
+    background-color: #ffc6ca;
+    border-color: #efb9c3;
+    background-image: url(../images/admin/notification-slash.gif);
+}

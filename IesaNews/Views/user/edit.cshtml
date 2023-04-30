@@ -1,0 +1,181 @@
+﻿
+@model User
+ 
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Área de usuario - IESA Informatización de Empresas, S.L.</title>
+    <link rel="stylesheet" href="~/css/dashbaord.css">
+    <link rel="stylesheet" href="~/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="~images/admin/jquery.wysiwyg.css" tppabs="http://www.xooom.pl/work/magicadmin/css/jquery.wysiwyg.css" media="screen" />
+    <!-- JQuery engine script-->
+    <script type="text/javascript" src="~images/admin/jquery-1.3.2.min.js" tppabs="http://www.xooom.pl/work/magicadmin/js/jquery-1.3.2.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="~/images/favicon.ico">
+    <!-- JQuery WYSIWYG plugin script -->
+    <script type="text/javascript" src="~images/admin/jquery.wysiwyg.js" tppabs="http://www.xooom.pl/work/magicadmin/js/jquery.wysiwyg.js"></script>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+
+
+    <div class="header">
+        <div class="wrapper">
+            <div class="logo">
+                <img src="~/images/logo.png" alt="">
+            </div>
+
+
+            <div class="links">
+                <p>Hola @User.Identity.Name . </p> <a href="/auth/logout">Logout   </a>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="wrapper">
+                <ul>
+                    <li class="fnav"><a href="/">Inicio</a></li>|
+
+                    <li class="fnav"><a asp-controller="auth" asp-action="dashboard">Área de usuarios </a></li>|
+                    <li class="fnav"><a asp-controller="news" asp-action="create">Anadir Noticias </a></li>|
+                    <li class="fnav"><a asp-controller="news" asp-action="edit">Editar Noticias </a></li>|
+                    <li class="fnav"><a asp-controller="category" asp-action="Add">Anadir Categoria </a></li>|
+                    <li class="fnav"><a asp-controller="category" asp-action="list">Editar Categoria </a></li>|
+                    <li class="fnav"><a asp-controller="contact" asp-action="list">Contactos</a></li>|
+                    <li class="fnav"><a asp-controller="user" asp-action="list">Usuarios</a></li>|
+                </ul>
+            </div>
+        </div>
+
+
+
+
+        <div class="content">
+            <div class="wrapper">
+                <div class="title">
+
+                </div>
+
+
+                <div class="details">
+                    <div class="info">
+
+
+                        <div class="pub">
+                            <!-- Form elements -->
+                            <div class="grid_12">
+
+                                <div class="module" style="width:50vw;">
+                                    <h2><span>Editar usuario</span></h2>
+
+                                    <div class="module-body">
+                                        <form action="edit" method="post">
+
+
+
+
+                                            <p>
+                                                <label>Nombre</label>
+                                                <input type="text" name="name" minlength="5" maxlength="100" class="input-medium" value="@Model.name" required />
+                                                <span class="notification-input ni-error"> </span>
+                                            </p>
+
+
+
+
+
+                                            <p>
+                                                <label>Usuario</label>
+                                                <input type="text" class="input-medium" name="usuario" value="@Model.usuario" required />
+                                            </p>
+
+                                            <p>
+                                                <label>Email</label>
+                                                <input type="text" class="input-medium" name="email" value="@Model.email" required />
+                                            </p>
+
+                                            <p>
+                                                <label>Contraseña</label>
+                                                <input type="text" class="input-medium" name="password" value="@Model.password" required />
+                                            </p>
+
+                                            <p>
+                                                <label>Contraseña</label>
+                                                <input type="text" class="input-medium" name="type" value="@Model.type" required />
+                                            </p>
+                                            <p>
+                                                <label>Image</label>
+                                                <img src="~/images/@Model.avatar" style="width:140px; height:140px;" />
+                                            </p>
+
+
+                                            <p>
+                                                <label>Nueva imagen</label>
+                                                <input type="file" name="image" class="input-medium" />
+                                            </p>
+
+
+
+                                            <fieldset>
+                                                <input class="submit-green" type="submit" value="Submit" />
+                                                <button class="submit-gray" type="reset" value="Cancel" />
+                                            </fieldset>
+                                        </form>
+                                    </div> <!-- End .module-body -->
+
+                                </div>  <!-- End .module -->
+                                <div style="clear:both;"></div>
+                            </div> <!-- End .grid_12 -->
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="footer">
+            <div class="content">
+                <ul>
+                    <li><small>Atención Comercial:</small></li>
+                    <li><small>	911 407 201</small></li>
+                    <li><small>	comercial@iesa.es</small></li>
+                    <li><small>	(c) 1999 - 2015 Informatización de Empresas, S.L.</small></li>
+                </ul>
+                <ul>
+                    <li><small>	Soporte técnico:</small></li>
+                    <li><small>911 407 202</small></li>
+                    <li><small class="mail">	soporte@iesa.es</small></li>
+                    <li><small><a href="">Mapa del sitio</a>| <a href="">Aviso legal</a> | <a href="">Protección de datos </a>| <a href="">Poítica de cookies</a></small></li>
+                </ul>
+                <ul>
+                    <li>
+                        <small>Soporte Empresas:</small>
+                    </li>
+                    <li><small>	911 407 207</small></li>
+                    <li><small>proveedores@tucomunidad.com</small></li>
+                    <li>
+                        <small>
+                            Informatización de Empresas, dispone de un sistema de calidad
+                            certificado de acuerdo a la norma 9001 por EQA
+                        </small>
+                    </li>
+
+                </ul>
+
+
+            </div>
+        </div>
+
+
+</body>
+</html>

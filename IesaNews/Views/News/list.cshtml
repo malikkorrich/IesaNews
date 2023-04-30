@@ -1,0 +1,71 @@
+﻿@model List<News>
+ 
+
+<style>
+    /*path*/
+    .path {
+        width: 100%;
+        display: flex;
+        background-color: #d8d7d7;
+        height: 60px;
+    }
+
+        .path .wrapper {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .path .wrapper p {
+                margin: 0 20px;
+            }
+
+            .path .wrapper a {
+                margin: 0 20px;
+                color: rgb(204, 102, 102);
+                font-weight: 400;
+                font-size: 1em;
+                text-decoration: none;
+            }
+</style>
+<div class="path">
+    <div class="wrapper">
+        <a clas="home" href="/">IESA</a> >
+        <p>Noticias</p> 
+    </div>
+</div>
+
+@if (Model.Count == 0) { }
+else
+{
+    Model.Reverse();
+    @foreach (News news in Model)
+{
+    <div class="article">
+
+
+        <div class="wrapper">
+            <img src="~/images/@news.image" alt="">
+            <small>@news.date.ToString("dddd, dd MMMM yyyy")</small>
+            @foreach (User users in ViewData["users"] as List<User>) { if (news.usuarioId == users.Id)
+                {<small style="color:rgba(106,165,153,1)">By @users.name</small>}
+            }
+            <small></small>
+
+            <h1>
+                @news.title
+            </h1>
+            <a href="/news/details/@news.Id">
+                <p>
+
+                    @news.topic.Substring(0, news.topic.Length - (news.topic.Length / 2))
+                </p>
+            </a>
+        </div>
+
+
+    </div>
+
+}
+}

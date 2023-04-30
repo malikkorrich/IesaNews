@@ -1,0 +1,152 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registracion usuarios - IESA Informatización de Empresas, S.L.</title>
+    <link rel="stylesheet" href="~/css/auth.css">
+    <link rel="icon" type="image/x-icon" href="~/images/favicon.ico">
+</head>
+<body>
+
+
+    <div class="header">
+        <div class="wrapper">
+            <div class="logo">
+                <img src="~/images/logo.png" alt="">
+            </div>
+
+            <div class="links">
+                <p>Usuario sin identificar. </p>    <a href="/auth/login">Conectarse   </a>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="wrapper">
+            <ul>
+                <li class="fnav"><a href="">Inicio</a></li>
+                <small>|</small>
+                <li class="fnav"><a href="">Área de usuarios </a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <div class="wrapper">
+            <div class="title">
+                <p class="fp">	Acceso clientes</p>
+            </div>
+
+
+            <div class="details">
+                <div class="info">
+                    <p>Identifiquese como cliente de IESA, para acceder entre otros a los siguientes contenidos:</p>
+
+                    <ul>
+                        <li>
+                            <p class="sp spf">Mensajes a moviles</p>
+                            <p class="sp">Personalizaciones de productos</p>
+                            <p class="sp">Compra de productos</p>
+                            <p class="sp">Consulta de facturas </p>
+                        </li>
+                    </ul>
+
+                    <div class="pub">
+                        <img src="https://app.iesa.es/web/Imagenes/banner-area-clientes-GIF.gif" alt="">
+                    </div>
+                </div>
+
+                <div class="login">
+
+                    <table>
+                        <thead>
+                            <tr>
+                            </tr>
+                        </thead>
+                        <form action="create" method="post">
+                            <tbody>
+
+
+                                <tr>
+                                    <td class="ftd"><small>name</small></td>
+                                    <td><input type="text" name="name"></td>
+                                </tr>
+                                <tr>
+                                    <td class="ftd"><small>Usuario</small></td>
+                                    <td><input type="text" name="usuario"></td>
+                                </tr>
+                                <tr>
+                                    <td class="ftd"><small>Email</small></td>
+                                    <td><input type="text" name="email"></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="ftd"><small>Contraseña</small></td>
+                                    <td><input type="password" name="password"></td>
+                                </tr>
+                                <tr>
+                                    <td class="ftd"><small>Tipo</small></td>
+                                    <td><input type="text" name="type"></td>
+                                </tr>
+                                <tr>
+                                    <td class="ftd"><small>Avatar</small></td>
+                                    <td><input type="file" name="avatar"></td>
+                                </tr>
+                                <tr>
+                                    <td class="ftd"></td>
+                                    <td><button type="submit" class="submit"><Small>Registrar</Small></button></td>
+                                </tr>
+
+                            </tbody>
+                        </form>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="footer">
+        <div class="content">
+            <ul>
+                <li><small>Atención Comercial:</small></li>
+                <li><small>	911 407 201</small></li>
+                <li><small>	comercial@iesa.es</small></li>
+                <li><small>	(c) 1999 - 2015 Informatización de Empresas, S.L.</small></li>
+            </ul>
+            <ul>
+                <li><small>	Soporte técnico:</small></li>
+                <li><small>911 407 202</small></li>
+                <li><small class="mail">	soporte@iesa.es</small></li>
+                <li><small><a href="">Mapa del sitio</a>| <a href="">Aviso legal</a> | <a href="">Protección de datos </a>| <a href="">Poítica de cookies</a></small></li>
+            </ul>
+            <ul>
+                <li>
+                    <small>Soporte Empresas:</small>
+                </li>
+                <li><small>	911 407 207</small></li>
+                <li><small>proveedores@tucomunidad.com</small></li>
+                <li>
+                    <small>
+                        Informatización de Empresas, dispone de un sistema de calidad
+                        certificado de acuerdo a la norma 9001 por EQA
+                    </small>
+                </li>
+
+            </ul>
+
+
+        </div>
+    </div>
+
+
+</body>
+</html>

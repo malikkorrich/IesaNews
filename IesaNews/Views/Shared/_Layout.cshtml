@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/iesa.css">
+    <link rel="stylesheet" href="~/css/privacy.css">
+    <link rel="stylesheet" href="~/css/scroll.css">
+    <link rel="stylesheet" href="~/css/form.css">
+    <link rel="stylesheet" href="~/css/topic.css">
+    <link rel="stylesheet" href="~/css/edit.css">
+    <link rel="stylesheet" href="~/css/team.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic%7CRoboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic%7CYantramanav:300,500,700&subset=latin,latin-ext
+    ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="~/images/favicon.ico">
+    <title>Iesa News</title>
+</head>
+<body>
+
+    <div class="container">
+
+
+        <header>
+            <div class="logo">
+                <img src="~/images/logo.png" alt="">
+            </div>
+
+            <div class="menu">
+                <ul class="nav">
+                    <li> <a class="first underline" asp-area="" asp-controller="Home" asp-action="Index">IESA |</a> </li>
+                    <li> <a class="underline" asp-area="" asp-controller="news" asp-action="list">NOTICIAS |</a> </li>
+                    <li> <a class="underline" asp-area="" asp-controller="home" asp-action="contact">CONTACTANOS |</a> </li>
+                    <li> <a class="underline"  asp-area="" asp-controller="home" asp-action="team">EQUIPO </a> </li>
+                </ul>
+            </div>
+
+            <div class="login">
+                @if (User.Identity.IsAuthenticated)
+                {
+                <a href="/auth/login">ÁREA DE USUARIO</a>
+                }
+                else { 
+            <a href="/auth/dashboard">ACCESO CLIENTES</a>
+                }
+            </div>
+
+        </header>
+
+    </div>
+
+
+
+
+    @*Render *@
+    @RenderBody()
+
+
+    <div class="rates">
+        <div class="rate">
+            <i class="fa-solid fa-people-group"></i>
+            <p><b>Más de 9.500</b> Administradores de Fincas ya confían en nosotros</p>
+        </div>
+        <div class="rate">
+            <i class="fa-sharp fa-solid fa-thumbs-up"></i>
+            <p><b>Nº1</b> Líder en programas informáticos para el sector de la Administración de Fincas.</p>
+        </div>
+
+        <div class="rate">
+            <i class="fa-solid fa-clock"></i>
+            <p><b>35 años</b> desarrollando software para gestionar comunidades nos avalan</p>
+        </div>
+
+    </div>
+
+
+
+    <div class="toTop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+
+    <footer>
+        <div class="wrapper">
+            <div class="logo">
+                <img src="~/images/logo.png" alt="">
+            </div>
+            <div class="about">
+                <p id="copyright">IESA, INFORMATIZACIÓN DE EMPRESAS SLU © 2023</p>
+                <p id="calle">C/ ALBASANZ, 14, 1ª PLANTA. EDIFICIO VERONA. 28037 MADRID.</p>
+                <p id="fijo">TLF. SOPORTE-AAFF: 91 903 94 23</p>
+                <p id="tel">TLF. OFICINA CENTRAL: 91 140 72 01</p>
+                <p id="tels">TLF. SOPORTE-EMPRESAS: 91 140 72 07</p>
+                <p id="politica">AVISO LEGAL - POLÍTICA DE PRIVACIDAD</p>
+                <p id="cookies">POLÍTICA DE COOKIES - POLÍTICA DE PRIVACIDAD REDES SOCIALES</p>
+            </div>
+            <div class="social">
+                <a href=""> <i class="fa-brands fa-youtube fa-bounce youtube"> </i></a>
+                <a href=""> <i class="fa-brands fa-linkedin fa-beat-fade linkdin"></i></a>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="~/js/scroll.js"></script>
+</body>
+</html>
